@@ -1,8 +1,9 @@
 const Sequelize = require("sequelize");
+const config = require('../config/config')
 
 const db = new Sequelize({
-    dialect: "sqlite",
-    storage: "./database.sqlite"
+    dialect: config.db.options.dialect,
+    storage: config.db.options.storage
 });
 
 const User = db.define("User", {
@@ -16,14 +17,3 @@ const User = db.define("User", {
 db.sync();
 
 module.exports = { User };
-
-
-// module.exports = (sequelize, DataTypes) => {
-//     sequelize.define('User', {
-//         email: {
-//             type: DataTypes.STRING,
-//             unique: true
-//         },
-//         password: DataTypes.STRING
-//     })
-// }
