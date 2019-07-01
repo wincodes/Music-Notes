@@ -23,6 +23,13 @@
           ></v-text-field>
           <br>
           <v-text-field
+            label="Genre"
+            required
+            :rules="[required]"
+            v-model="music.genre"
+          ></v-text-field>
+          <br>
+          <v-text-field
             label="Album Image Url"
             required
             :rules="[required]"

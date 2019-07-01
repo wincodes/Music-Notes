@@ -13,10 +13,33 @@
         </router-link>
         </v-btn>
       <div class="pl-4 pr-4 pt-2 pb-2">
-           <div v-for="music in musics" :key="music.id">
-             <h4>{{music.title}}</h4>
+           <div v-for="music in musics" class="music" :key="music.id">
+             <v-layout>
+               <v-flex xs6>
+                 <div class="music-title">
+                  {{music.title}}
+                 </div>
+                 <div class="music-artist">
+                   {{music.artist}}
+                 </div>
+                 <div class="music-genre">
+                   {{music.genre}}
+                 </div>
+
+                  <v-btn flat dark class="cyan">
+                    <router-link :to="{ name: 'viewMusic', params:{musicId: music.id} }">
+                        Browse
+                    </router-link>
+                  </v-btn>
+               </v-flex>
+
+               <v-flex xs6>
+                 <img class="album-image" :src="music.albumImageUrl">
+               </v-flex>
+             </v-layout>
+             
              <p>
-               {{music.artist}}
+               
                <br>
                <small>{{music.lyrics}}</small>
                <br>
@@ -62,5 +85,23 @@ a {
 }
 .error{
   color: red;
+}
+.album-image{
+  width: 70%;
+  margin: 0 auto;
+}
+.music{
+  padding: 20px;
+  height: 330px;
+  overflow: hidden;
+}
+.music-title{
+  font-size: 30px;
+}
+.music-artist{
+  font-size: 24px;
+}
+.music-genre{
+  font-size: 18px;
 }
 </style>
