@@ -5,6 +5,7 @@ import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Music from '@/components/Music'
 import CreateMusic from '@/components/CreateMusic'
+import EditMusic from '@/components/EditMusic'
 import MusicComponent from '@/components/MusicComponent'
 
 Vue.use(Router)
@@ -36,9 +37,14 @@ export default new Router({
             component: CreateMusic
         },
         {
-            path: 'music/:musicId',
+            path: '/music/:musicId',
             name: 'viewMusic',
             component: MusicComponent
+        }, 
+        {
+            path: '/music/:musicId/edit',
+            name: 'edit-music',
+            component: EditMusic
         }
     ]
 })

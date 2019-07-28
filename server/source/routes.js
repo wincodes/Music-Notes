@@ -12,4 +12,8 @@ module.exports = (app) => {
     app.get('/musics', MusicController.index)
 
     app.post('/musics', MusicController.post)
+
+    app.get('/musics/:musicId', MusicController.show)
+    
+    app.put('/musics/:musicId', MusicController.put)
 }

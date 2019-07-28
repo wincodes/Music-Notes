@@ -1,4 +1,5 @@
 <template>
+<v-flex xs6 offset-xs3>
    <panel title="Musics">
        <v-btn
         slot="action"
@@ -15,7 +16,7 @@
       <div class="pl-4 pr-4 pt-2 pb-2">
            <div v-for="music in musics" class="music" :key="music.id">
              <v-layout>
-               <v-flex xs6>
+               <v-flex  xs6 >
                  <div class="music-title">
                   {{music.title}}
                  </div>
@@ -33,22 +34,15 @@
                   </v-btn>
                </v-flex>
 
-               <v-flex xs6>
+               <v-flex  xs6>
                  <img class="album-image" :src="music.albumImageUrl">
                </v-flex>
              </v-layout>
              
-             <p>
-               
-               <br>
-               <small>{{music.lyrics}}</small>
-               <br>
-               <small>{{music.tab}}</small>
-             </p>
-             <hr>
            </div>
       </div>
    </panel>
+   </v-flex>
 </template>
 <script>
 import Panel from '@/components/Panel'
@@ -91,7 +85,7 @@ a {
   margin: 0 auto;
 }
 .music{
-  padding: 20px;
+  padding: 50px;
   height: 330px;
   overflow: hidden;
 }
